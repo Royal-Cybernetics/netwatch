@@ -1,0 +1,2 @@
+python-dotenv==1.2.3
+scapy==2.7.0
