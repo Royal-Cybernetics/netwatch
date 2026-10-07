@@ -1,0 +1,13 @@
+[Unit]
+Description=netwatch ARP network scan
+
+[Service]
+Type=oneshot
+User=netwatch
+Group=netwatch
+EnvironmentFile=/etc/netwatch/netwatch.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/netwatch/venv/bin/python /opt/netwatch/scanner.py
+AmbientCapabilities=CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_RAW
+NoNewPrivileges=true
